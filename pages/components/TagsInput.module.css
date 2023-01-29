@@ -20,18 +20,25 @@ html, body{
     padding: .5em;
     border-radius: 3px;
     width: 300 px;
-    margin-top: 1em;
+    margin-top: 0px;
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: .5em;
 }
+/* .tags_container{
+    display: flex;
+    color: white;
+    padding: .5em;
+
+} */
 
 .tag_item{
-    background-color: #825c5c; /*tag color*/
+    background-color: #e0e0e0; /*tag color*/
     display: inline-block;
     padding: .5em .75em;
     border-radius: 20px;
+    margin-right: 3px;
 }
 .tag_item .close{
     height: 20 px;

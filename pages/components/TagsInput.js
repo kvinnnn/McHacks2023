@@ -15,13 +15,16 @@ const TagsInput = ({tags, setTags}) => {
     }
     return (
         <div className={styles.tag_input_container}>
+            <input onKeyDown={handleKeyDown} type="text" className={styles.tags_input} placeholder="Type something"/>
+            <div>
             { tags.map((tag,index) => (
                 <div className={styles.tag_item} key={index}>
                     <span className="text">{tag}</span>
                     <span className="close" onClick={() => removeTag(index)}>&times;</span>
-            </div>
+                </div>
             ))}
-            <input onKeyDown={handleKeyDown} type="text" className={styles.tags_input} placeholder="Type something"/>
+            </div>
+            
         </div>
     )
 }
