@@ -47,6 +47,7 @@
   flex-direction: column;
   align-self: center;
   width: 320px;
+  margin-top: 50px;
 }
 .main input[type="text"] {
   padding: 12px 16px;
