@@ -132,9 +132,9 @@ export default function Home() {
             
             <hr
                 style={{
-                    color: 'black',
-                    backgroundColor: 'black',
-                    height: 1
+                    color: 'gray',
+                    backgroundColor: 'gray',
+                    height: 0.4
                 }}
             />
             <div className={styles.name}>{TextDivider(result)[3]}</div>
@@ -144,7 +144,7 @@ export default function Home() {
                 <ul>
                   {[...tags, 'Salt', 'Pepper', 'Vegetable oil'].map(tag => <li>{tag}</li>)}
                 </ul>
-                Time: {TextDivider(result)[5]}
+                Time: {TextDivider(result)[5] ? TextDivider(result)[5] : '10 minutes'}
               </div>
               <div className={styles.instructions}><span className={styles.bigBoldSpace}>Instructions:</span>
                 {TextDivider(result)[4].map(instruction => <div>{instruction}</div>)}

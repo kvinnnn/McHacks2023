@@ -15,7 +15,10 @@ const TagsInput = ({tags, setTags}) => {
     }
     return (
         <div className={styles.tag_input_container}>
-            <input onKeyDown={handleKeyDown} type="text" className={styles.tags_input} placeholder="Type something"/>
+            <div style={{display: 'flex', flexDirection: 'row'}}>
+                <input onKeyDown={handleKeyDown} type="text" className={styles.tags_input} placeholder="Type an ingredient"/>
+                <img src="/camera3.png" className={styles.icon} />
+            </div>
             <div>
             { tags.map((tag,index) => (
                 <div className={styles.tag_item} key={index}>

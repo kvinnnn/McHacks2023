@@ -52,7 +52,7 @@
 .main input[type="text"] {
   padding: 12px 16px;
   border: 1px solid #e63b3b;
-  border-radius: 4px;
+  border-radius: 10px;
   outline-color: #e63b3b;
 }
 .main ::placeholder {
@@ -64,7 +64,7 @@
   color: #fff;
   background-color: #e63b3b;
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
   text-align: center;
   cursor: pointer;
 }
@@ -85,6 +85,7 @@
   display: flex;
   flex-direction: row;
   font-size: 30px;
+  margin-top: 3px;
 
 }
 

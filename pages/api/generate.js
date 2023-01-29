@@ -30,7 +30,7 @@ export default async function (req, res) {
       model: "text-davinci-003",
       prompt: generatePrompt(ingredients),
       temperature: 0.3,
-      max_tokens: 300,
+      max_tokens: 500,
       top_p: 1.0,
       frequency_penalty: 0.0,
       presence_penalty: 0.0,
