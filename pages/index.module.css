@@ -76,12 +76,14 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  height: 450px;
 }
 
 .name {
+  font-weight: bold;
   display: flex;
   flex-direction: row;
-
+  font-size: 30px;
 
 }
 
@@ -99,14 +101,23 @@
   border-radius: 20px;
   margin-right: 3px;
   margin-top: 40px;
+}
 
+.bigBold {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.bigBoldSpace{
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
 }
 
 .instructions {
   display: flex;
   flex: 6;
   flex-direction: column;
-  font-weight: bold;
   padding: .5em .75em;
   border-radius: 20px;
   margin-right: 3px;

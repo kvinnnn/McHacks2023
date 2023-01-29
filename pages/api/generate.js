@@ -30,7 +30,7 @@ export default async function (req, res) {
       model: "text-davinci-003",
       prompt: generatePrompt(ingredients),
       temperature: 0.3,
-      max_tokens: 240,
+      max_tokens: 300,
       top_p: 1.0,
       frequency_penalty: 0.0,
       presence_penalty: 0.0,
@@ -56,7 +56,7 @@ export default async function (req, res) {
 function generatePrompt(ingredients) {
   const capitalizedingredients =
     ingredients[0].toUpperCase() + ingredients.slice(1).toLowerCase();
-return `Write a recipe with its instructions and estimated cooking time based on these ingredients.:
+return `Write two recipes with its instructions and estimated cooking time based on these ingredients:
 
 Ingredients:
 ${capitalizedingredients}

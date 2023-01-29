@@ -16,15 +16,48 @@ export default function Home() {
     if (result === null) {
       return ['', '', 0]
     }
-    const text = result?.split("Instructions:\n")
+    console.log('result', result);
+    const newTemp = result?.split('Name:')
+    console.log('newTemp', newTemp)
+
+    const text = newTemp[0]?.split("Instructions:\n")
     name = text?.[0]
     instructions = text[1]?.split("Estimated Cooking Time:")
     const temp = instructions?.[0]?.split('\n')
-    for (var i=1; i < temp.length/2; i = i + 2) {
-      steps.push(temp[i])
+    console.log('temp', temp);
+    var i = 0;
+    for (i; i < temp?.length; i++) {
+      if (i === 1 || i === 0) {
+        steps.push('\n' + temp?.[i])
+      }
+      else {
+        steps.push(temp?.[i])
+      }
     }
     time = instructions?.[1]
-    info = [name, steps, time]
+
+    var name2
+    var instructions2
+    var steps2 = []
+    var time2
+    var info2
+    const text2 = newTemp[1]?.split("Instructions:\n")
+    name2 = text2?.[0]
+    instructions2 = text2[1]?.split("Estimated Cooking Time:")
+    const temp2 = instructions2?.[0]?.split('\n')
+    console.log('temp', temp2);
+    var i2 = 0;
+    for (i2; i2 < temp2?.length; i2++) {
+      if (i2 === 1 || i2 === 0) {
+        steps2.push('\n' + temp2?.[i2])
+      }
+      else {
+        steps2.push(temp2?.[i2])
+      }
+    }
+    time2 = instructions2?.[1]
+    info = [name, steps, time, name2, steps2, time2]
+    console.log('info', info)
     return info;
   }
 
@@ -62,7 +95,7 @@ export default function Home() {
   // console.log(instructions)
 
   return (
-    <div>
+    <div style={{marginLeft: '100px', marginRight: '100px'}}>
       <Head>
         <title>RecipeZ</title>
         <link rel="icon" href="/logo.png" />
@@ -82,20 +115,41 @@ export default function Home() {
             </form>
             {/* <div className={styles.result}>{result}</div> */}
           </div>
-          {result && <div style={{flex: 2}}>
+          {result && <div style={{flex: 2, marginLeft: '50px', overflowY: 'scroll'}}>
             <div className={styles.name}>{TextDivider(result)[0]}</div>
             <div className={styles.other_box}>
               <div className={styles.ingredients_list}>
-                Ingredients:
+                <span className={styles.bigBold}>Ingredients:</span>
                 <ul>
-                  {[...tags, 'salt', 'pepper', 'vegetable oil'].map(tag => <li>{tag}</li>)}
+                  {[...tags, 'Salt', 'Pepper', 'Vegetable oil'].map(tag => <li>{tag}</li>)}
                 </ul>
                 Time: {TextDivider(result)[2]}
               </div>
-              <div className={styles.instructions}>Instructions: {TextDivider(result)[1].map(instruction => <div>{instruction}</div>)}</div>
+              <div className={styles.instructions}><span className={styles.bigBoldSpace}>Instructions:</span>
+                {TextDivider(result)[1].map(instruction => <div>{instruction}</div>)}
+              </div>
             </div>
             
-
+            <hr
+                style={{
+                    color: 'black',
+                    backgroundColor: 'black',
+                    height: 1
+                }}
+            />
+            <div className={styles.name}>{TextDivider(result)[3]}</div>
+            <div className={styles.other_box}>
+              <div className={styles.ingredients_list}>
+                <span className={styles.bigBold}>Ingredients:</span>
+                <ul>
+                  {[...tags, 'Salt', 'Pepper', 'Vegetable oil'].map(tag => <li>{tag}</li>)}
+                </ul>
+                Time: {TextDivider(result)[5]}
+              </div>
+              <div className={styles.instructions}><span className={styles.bigBoldSpace}>Instructions:</span>
+                {TextDivider(result)[4].map(instruction => <div>{instruction}</div>)}
+              </div>
+            </div>
           </div>}
         </div>
       </main>
